@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#1B4D3E">
+<title>Oral Link</title>
+<style>
+:root{--g:#1B4D3E;--r:#A32035;--c:#222;--s:#D9C9B2;--w:#F8F6F2;--m:#6f746f;--line:#e4ddd2}
+*{box-sizing:border-box}html,body{margin:0;background:#eee9e0;color:var(--c);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Tahoma,Arial,sans-serif}
+button,input,select{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}
+.app{max-width:430px;min-height:100dvh;margin:auto;background:var(--w);box-shadow:0 0 36px #0001}
+header{position:sticky;top:0;z-index:20;background:#f8f6f2f2;backdrop-filter:blur(10px);display:flex;justify-content:space-between;align-items:center;padding:13px 16px;border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:9px}.tooth{width:37px;height:37px;border:3px solid var(--g);border-radius:48% 48% 42% 42%;position:relative}.tooth:after{content:"↗";position:absolute;inset:6px;color:var(--g);font-weight:900;font-size:20px}
+.name{font-weight:950;font-size:23px}.tag{font-size:9px;color:#777;letter-spacing:.7px}.flag{font-size:26px}
+.page{display:none;padding:16px 15px 96px;animation:in .3s ease}.page.on{display:block}@keyframes in{from{opacity:0;transform:translateY(7px)}to{opacity:1}}
+.hero{height:285px;position:relative;border-radius:27px;overflow:hidden;color:#fff;background:#173f33;margin-bottom:18px;box-shadow:0 16px 34px #1b4d3e20}
+.slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity .9s ease}.slide.on{opacity:1}.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#0001,#0d3026dd)}
+.heroText{position:absolute;z-index:3;left:18px;right:18px;bottom:17px}.heroText h1{margin:0 0 7px;font-size:29px;line-height:1.22}.heroText p{margin:0;line-height:1.6}.motto{margin-top:10px;font-size:12px;font-weight:850;color:#f0dfc5}
+.dots{display:flex;gap:6px;margin-top:12px}.dot{width:8px;height:8px;border:0;border-radius:20px;background:#ffffff66;padding:0}.dot.on{background:#fff;width:22px}
+.h2{font-size:22px;font-weight:950;color:#173c31;margin:21px 0 11px}.sub{color:var(--m);font-size:13px;line-height:1.65;margin:-3px 0 11px}
+.role{background:#fff;border:1px solid var(--line);border-radius:21px;padding:16px;margin:10px 0;display:flex;gap:13px;align-items:center;box-shadow:0 5px 14px #00000008}.role .ico{font-size:34px}.role b{font-size:18px}.role p{font-size:12px;color:var(--m);line-height:1.55;margin:4px 0 0}
+.grid2,.grid3{display:grid;gap:9px}.grid2{grid-template-columns:1fr 1fr}.grid3{grid-template-columns:repeat(3,1fr)}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:13px 8px;text-align:center;min-height:100px;transition:.15s}.card.sel{background:#edf4ef;border:2px solid var(--g)}.card .ico{font-size:29px}.card b{display:block;font-size:14px;margin-top:5px}.tiny{color:var(--m);font-size:10px;margin-top:4px;line-height:1.4}
+.btn{border:0;border-radius:15px;padding:13px 14px;font-weight:900}.primary{width:100%;background:var(--g);color:#fff;box-shadow:0 7px 16px #1b4d3e20}.ghost{background:#fff;color:var(--g);border:1px solid var(--g)}.back{padding:8px 11px;background:#fff;color:var(--g);border:1px solid var(--line);border-radius:13px;font-weight:900}
+.titleRow{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}.titleRow h2{font-size:24px;color:var(--g);margin:0}
+.formRow{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}select,.search{width:100%;border:1px solid var(--line);background:#fff;border-radius:14px;padding:11px 12px;outline:none}
+.clinic{background:#fff;border:1px solid var(--line);border-radius:19px;padding:14px;margin:10px 0;box-shadow:0 4px 12px #00000007}.clinicTop{display:flex;justify-content:space-between;gap:10px}.clinic h3{margin:0;font-size:17px;line-height:1.4}.stars{white-space:nowrap;font-weight:950;color:#8a6400}.rev{font-size:10px;color:#777;text-align:center}.info{font-size:12.5px;color:#555;margin-top:7px;line-height:1.55}.actions{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:11px}.sm{border:0;border-radius:12px;padding:10px;font-weight:900;background:#edf4ef;color:var(--g)}.sm.call{background:var(--g);color:#fff}.sm.disabled{opacity:.45;pointer-events:none}
+.notice{background:#fff7e8;border:1px solid #ead7ae;color:#66572d;border-radius:14px;padding:10px 11px;font-size:11px;line-height:1.6;margin:10px 0}
+.studentHero{height:230px;position:relative;border-radius:24px;overflow:hidden;background:#183e33;margin:11px 0 14px}.stu{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity .9s ease}.stu.on{opacity:1}.studentHero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#0000,#0d3026d8)}.stuText{position:absolute;z-index:3;bottom:14px;left:14px;right:14px;color:#fff}.stuText b{font-size:18px}.stuText small{display:block;margin-top:4px}
+.chips{display:flex;gap:7px;overflow:auto;padding:2px 0 5px;scrollbar-width:none}.chip{white-space:nowrap;background:#fff;border:1px solid var(--line);border-radius:999px;padding:9px 12px;font-weight:850}.chip.sel{background:var(--g);color:#fff;border-color:var(--g)}
+.patient{background:#fff;border:1px solid var(--line);border-radius:18px;padding:13px;margin:9px 0}.patientHead{display:flex;justify-content:space-between}.patient h3{margin:0;font-size:16px}.pid{color:var(--g);font-weight:950}.badge{display:inline-block;background:#edf4ef;color:var(--g);border-radius:999px;padding:4px 7px;font-size:10px;font-weight:900;margin-top:5px}.meta{display:grid;grid-template-columns:1fr 1fr;gap:7px;font-size:12px;color:#555;margin:11px 0}
+.bottom{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(430px,100%);display:none;grid-template-columns:repeat(4,1fr);background:#fffc;border-top:1px solid var(--line);backdrop-filter:blur(10px);padding:8px 5px calc(8px + env(safe-area-inset-bottom));z-index:30}.bottom.show{display:grid}.nav{text-align:center;font-size:10px;color:#777}.nav span{display:block;font-size:21px}.nav.active{color:var(--g);font-weight:900}
+.toast{position:fixed;z-index:60;bottom:88px;left:50%;transform:translate(-50%,15px);opacity:0;background:#173c31;color:#fff;padding:10px 14px;border-radius:999px;font-size:12px;font-weight:850;transition:.2s;pointer-events:none;white-space:nowrap}.toast.on{opacity:1;transform:translate(-50%,0)}
+button,.card,.role,.chip{touch-action:manipulation;-webkit-tap-highlight-color:#1b4d3e22}
+</style>
+</head>
+<body>
+<div class="app">
+<header><div class="brand"><div class="tooth"></div><div><div class="name">Oral Link</div><div class="tag">PEOPLE · CARE · OPPORTUNITIES</div></div></div><div class="flag">🇯🇴</div></header>
+
+<section id="home" class="page on">
+  <div class="hero" id="mainHero">
+    <div class="slide on" style="background-image:url('https://images.unsplash.com/photo-1548018560-c7196548e84d?auto=format&fit=crop&w=1000&q=80')"></div>
+    <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?auto=format&fit=crop&w=1000&q=80')"></div>
+    <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=80')"></div>
+    <div class="heroText"><h1>أهلًا فيك في Oral Link</h1><p>نقرّب المسافة بينك وبين العناية بأسنانك.</p><div class="motto">جذور أردنية · رعاية إنسانية · ابتسامة تجمعنا</div><div class="dots" id="mainDots"></div></div>
+  </div>
+  <div class="h2">كيف بدك تستخدمي Oral Link؟</div>
+  <div class="role" onclick="go('patient')"><div class="ico">🙂</div><div><b>أنا مريض</b><p>أبحث عن طبيب أو أخصائي أو طالب متدرب، وأشوف العيادات في الأردن مع تقييمها وموقعها.</p></div></div>
+  <div class="role" onclick="go('student')"><div class="ico">🎓</div><div><b>أنا طالب طب أسنان</b><p>مسار مخصص لطلاب كلية طب الأسنان في جامعة العقبة للعلوم الطبية للبحث عن الحالات السريرية.</p></div></div>
+</section>
+
+<section id="patient" class="page">
+  <div class="titleRow"><h2>أنا مريض</h2><button class="back" onclick="go('home')">رجوع</button></div>
+  <div class="h2">من ترغب أن يعالجك؟</div>
+  <div class="grid2" id="providers">
+    <button class="card sel" data-v="student"><div class="ico">🎓</div><b>طالب متدرب</b><div class="tiny">(تحت إشراف أخصائي)</div></button>
+    <button class="card" data-v="general"><div class="ico">🧑‍⚕️</div><b>طبيب أسنان عام</b></button>
+    <button class="card" data-v="specialist"><div class="ico">👩‍⚕️</div><b>طبيب أخصائي</b></button>
+    <button class="card" data-v="any"><div class="ico">✨</div><b>لا يوجد تفضيل</b></button>
+  </div>
+
+  <div class="h2">ما المشكلة أو الخدمة التي تحتاجها؟</div>
+  <div class="grid3" id="services">
+    <button class="card sel"><div class="ico">🦷</div><b>حشوات</b></button>
+    <button class="card"><div class="ico">⚡</div><b>علاج العصب</b></button>
+    <button class="card"><div class="ico">✨</div><b>تنظيف ولثة</b></button>
+    <button class="card"><div class="ico">🪥</div><b>خلع الأسنان</b></button>
+    <button class="card"><div class="ico">🧩</div><b>أطقم وتيجان</b></button>
+    <button class="card"><div class="ico">👶</div><b>أطفال</b></button>
+  </div>
+
+  <div class="h2">دليل العيادات في الأردن</div>
+  <div class="sub">اختاري المحافظة. داخل كل محافظة الترتيب من أعلى تقييم إلى الأقل، وعند التعادل الأكثر مراجعات أولًا.</div>
+  <div class="formRow"><select id="gov"></select><select id="sort"><option value="rating">الأعلى تقييمًا</option><option value="reviews">الأكثر مراجعات</option></select></div>
+  <input id="q" class="search" placeholder="ابحثي باسم العيادة أو الدكتور أو التخصص">
+  <div class="notice">التقييمات وعدد المراجعات لقطة من بيانات عامة وقت إعداد النموذج وقد تتغير. إذا لم نجد رقمًا أو تقييمًا موثوقًا نعرض «غير متاح» بدل اختراعه.</div>
+  <div id="clinics"></div>
+</section>
+
+<section id="student" class="page">
+  <div class="titleRow"><h2>أنا طالب طب أسنان</h2><button class="back" onclick="go('home')">رجوع</button></div>
+  <div class="studentHero" id="studentHero">
+    <div class="stu on" style="background-image:url('https://media.licdn.com/dms/image/v2/D4E22AQFpt9733cjm5Q/feedshare-shrink_800/feedshare-shrink_800/0/1728899069983?e=2147483647&t=EOi8-JehoaJB-UwXnE6X0b4dWNi5tx-_CxK0jLQ90Aw&v=beta')"></div>
+    <div class="stu" style="background-image:url('https://www.wohd.org/sites/default/files/2026-03/WOHD.png')"></div>
+    <div class="stu" style="background-image:url('https://worldoralhealthday.org/sites/default/files/2026-03/WhatsApp%20Image%202026-03-07%20at%201.06.21%20AM.jpeg')"></div>
+    <div class="stuText"><b>كلية طب الأسنان · جامعة العقبة للعلوم الطبية</b><small>مسارك السريري يبدأ من هنا</small><div class="dots" id="studentDots"></div></div>
+  </div>
+  <div class="notice"><b>مخصص فقط لطلبة كلية طب الأسنان في جامعة العقبة للعلوم الطبية.</b><br>الصور المستخدمة هنا منشورة لجامعة/كلية طب الأسنان؛ عند توفر الصور الرسمية للعيادات الداخلية نفسها تُستبدل مباشرة داخل هذا الأنيميشن.</div>
+
+  <div class="h2">ما الحالة التي تبحث عنها اليوم؟</div>
+  <div class="grid3" id="cats">
+    <button class="card sel" data-cat="restorative"><div class="ico">🦷</div><b>حشوات</b><div class="tiny">Restorative</div></button>
+    <button class="card" data-cat="endo"><div class="ico">⚡</div><b>علاج العصب</b><div class="tiny">Endodontics</div></button>
+    <button class="card" data-cat="perio"><div class="ico">✨</div><b>تنظيف ولثة</b><div class="tiny">Periodontics</div></button>
+    <button class="card" data-cat="surgery"><div class="ico">🪥</div><b>خلع</b><div class="tiny">Oral Surgery</div></button>
+    <button class="card" data-cat="prostho"><div class="ico">🧩</div><b>أطقم وتيجان</b><div class="tiny">Prosthodontics</div></button>
+    <button class="card" data-cat="peds"><div class="ico">👶</div><b>أطفال</b><div class="tiny">Pediatric Dentistry</div></button>
+  </div>
+
+  <div id="resto"><div class="h2">نوع الحشوة المطلوبة</div><div class="chips" id="reqs">
+    <button class="chip" data-req="all">أي نوع</button><button class="chip" data-req="Class I">Class I</button><button class="chip sel" data-req="Class II">Class II</button><button class="chip" data-req="Class III">Class III</button><button class="chip" data-req="Class IV">Class IV</button><button class="chip" data-req="Class V">Class V</button>
+  </div></div>
+  <div class="h2">المرضى المحتملون</div><div class="sub">المطابقة لا تعني أن الحالة مؤكدة؛ يلزم فحص سريري وموافقة المشرف.</div>
+  <div id="patients"></div>
+</section>
+</div>
+
+<nav class="bottom" id="bottom"><div class="nav active" onclick="scrollTo(0,0)"><span>⌂</span>الرئيسية</div><div class="nav" onclick="jumpSearch()"><span>⌕</span>البحث</div><div class="nav" onclick="toast('طلباتك في النموذج تجريبية فقط')"><span>▤</span>طلباتي</div><div class="nav" onclick="toast('الملف الشخصي يظهر بعد التسجيل والتحقق')"><span>◯</span>حسابي</div></nav>
+<div class="toast" id="toast"></div>
+<script>
+const clinics=[{"gov": "العقبة", "name": "Galaxy Dental Center", "doctor": "اسم الطبيب غير متاح في المصدر المستخدم", "specialty": "طب أسنان عام وتجميل", "rating": 5.0, "reviews": 1689, "phone": null, "address": "العقبة، الأردن"}, {"gov": "العقبة", "name": "عيادة الدكتور كميل رزق", "doctor": "د. كميل رزق", "specialty": "طب الأسنان", "rating": 4.9, "reviews": 446, "phone": null, "address": "العقبة، الأردن"}, {"gov": "العقبة", "name": "عيادة الدكتور أمين سامي العبدالله", "doctor": "د. أمين سامي العبدالله", "specialty": "طب الأسنان", "rating": 5.0, "reviews": 54, "phone": null, "address": "العقبة، الأردن"}, {"gov": "عمّان", "name": "Magic Tooth Dental Center", "doctor": "اسم الطبيب غير متاح في المصدر المستخدم", "specialty": "طب الأسنان العام والتجميلي", "rating": 4.9, "reviews": 1100, "phone": "0796600883", "address": "شارع الأميرة بسمة، مبنى 192، الطابق الأول، عمّان"}, {"gov": "عمّان", "name": "Dr. Hala Al Yamani Dental Center", "doctor": "د. هلا اليماني", "specialty": "طب الأسنان", "rating": 5.0, "reviews": 1059, "phone": null, "address": "عمّان، الأردن"}, {"gov": "إربد", "name": "Cloud9 Dental Center", "doctor": "د. وائل معروف، د. كوثر مسالمة، د. سارة شرايدة", "specialty": "زراعة وطب أسنان عام", "rating": 4.9, "reviews": 268, "phone": "0795685858", "address": "إربد، مجمع عمّان، غرب دوار باصات جت/الحجازي، مقابل قصر عبدين"}, {"gov": "إربد", "name": "The Speciality Clinic - عيادات الاختصاص", "doctor": "د. عبد الكريم بني هاني", "specialty": "طب الأسنان", "rating": 5.0, "reviews": 31, "phone": null, "address": "شارع بغداد، إربد"}, {"gov": "الزرقاء", "name": "Dr. Sohaib Agha Cosmetic Dentistry", "doctor": "د. صهيب آغا", "specialty": "طب الأسنان التجميلي", "rating": 5.0, "reviews": 317, "phone": null, "address": "الزرقاء، الأردن"}, {"gov": "الزرقاء", "name": "عيادة الدكتور صهيب جمال", "doctor": "د. صهيب جمال", "specialty": "طب الأسنان", "rating": 4.9, "reviews": 205, "phone": null, "address": "دوار الطيارة، الزرقاء"}, {"gov": "البلقاء / السلط", "name": "عيادة الدكتور يوسف جمال الحناحنة", "doctor": "د. يوسف جمال الحناحنة", "specialty": "طب الأسنان", "rating": 5.0, "reviews": 7, "phone": "0799216803", "address": "شارع الأمير حسن بن طلال، السلط"}, {"gov": "البلقاء / السلط", "name": "عيادة الدكتور محمد الغنيم", "doctor": "د. محمد الغنيم", "specialty": "طب الأسنان", "rating": 4.9, "reviews": 96, "phone": null, "address": "قرب مسجد زينب، زيّ، البلقاء"}, {"gov": "مادبا", "name": "عيادة د. راشد السالم ود. ماهر الشوابكة", "doctor": "د. راشد السالم، د. ماهر الشوابكة", "specialty": "طب الأسنان", "rating": 5.0, "reviews": 47, "phone": null, "address": "شارع مادبا الغربي، مادبا"}, {"gov": "مادبا", "name": "Dr. Mohammad Almaayah Clinic", "doctor": "د. محمد المعايعة", "specialty": "طب الأسنان", "rating": 4.9, "reviews": 85, "phone": null, "address": "شارع الملك حسين، مادبا"}, {"gov": "مادبا", "name": "Madaba Dental Clinic", "doctor": "اسم الطبيب غير متاح في المصدر المستخدم", "specialty": "طب الأسنان", "rating": 4.8, "reviews": 14, "phone": "0799835666", "address": "شارع مادبا الغربي، مادبا"}, {"gov": "الكرك", "name": "عيادة الدكتور عبدالله الرواشدة", "doctor": "د. عبدالله الرواشدة", "specialty": "طب الأسنان", "rating": 4.9, "reviews": 30, "phone": null, "address": "الثنية، الكرك"}, {"gov": "الكرك", "name": "Karak Smile Dental Center", "doctor": "اسم الطبيب غير متاح في المصدر المستخدم", "specialty": "طب الأسنان", "rating": 4.8, "reviews": 6, "phone": null, "address": "المرج / قرب دوار الإسكان، الكرك"}, {"gov": "جرش", "name": "عيادة الدكتور هيثم العتوم", "doctor": "د. هيثم العتوم", "specialty": "طب الأسنان", "rating": 5.0, "reviews": 4, "phone": "0777902691", "address": "شارع الشعب، جرش"}, {"gov": "جرش", "name": "Al-Jabarat Medical Clinics", "doctor": "اسم طبيب الأسنان غير متاح في المصدر المستخدم", "specialty": "عيادات طبية وأسنان", "rating": 4.3, "reviews": 6, "phone": "0775580580", "address": "شارع مخيم غزة، جرش 26166"}, {"gov": "عجلون", "name": "عيادة الدكتور عبدالرحمن الفواز", "doctor": "د. عبدالرحمن الفواز", "specialty": "طب الأسنان", "rating": 5.0, "reviews": 14, "phone": null, "address": "عنجرة، عجلون"}, {"gov": "عجلون", "name": "Mas Clinic for Oral & Dental Surgery", "doctor": "د. أسامة بني فواز (مذكور في تقييمات عامة)", "specialty": "جراحة الفم والأسنان", "rating": 5.0, "reviews": 8, "phone": null, "address": "محافظة عجلون"}, {"gov": "عجلون", "name": "عيادة الدكتور هاشم الغزو", "doctor": "د. هاشم الغزو", "specialty": "طب الأسنان", "rating": 5.0, "reviews": 5, "phone": "0779421988", "address": "عجلون"}, {"gov": "المفرق", "name": "عيادة الدكتور ضياء الدين عويدات", "doctor": "د. ضياء الدين عويدات", "specialty": "طب الأسنان", "rating": 4.9, "reviews": 8, "phone": null, "address": "شارع مجمع السفريات الغربي، المفرق"}, {"gov": "المفرق", "name": "عيادة الدكتورة منى أبو سمور", "doctor": "د. منى أبو سمور", "specialty": "طب الأسنان", "rating": 4.9, "reviews": 7, "phone": null, "address": "المفرق"}, {"gov": "المفرق", "name": "مركز الدكتور يوسف كبوشي", "doctor": "د. يوسف كبوشي", "specialty": "طب الأسنان", "rating": 4.7, "reviews": 14, "phone": "026236363", "address": "شارع زين العابدين، المفرق"}, {"gov": "معان", "name": "عيادات الدكتور رسمي السعيدات", "doctor": "د. رسمي السعيدات", "specialty": "طب الأسنان", "rating": 4.9, "reviews": 13, "phone": "032154854", "address": "الشارع الرئيسي، بجانب دائرة الأحوال المدنية، وادي موسى"}, {"gov": "معان", "name": "عيادة الدكتور صالح القاضي", "doctor": "د. صالح القاضي", "specialty": "طب الأسنان", "rating": 4.0, "reviews": 2, "phone": "0772065744", "address": "بجانب المسجد العمري، وادي موسى"}, {"gov": "الطفيلة", "name": "عيادة الدكتورة رولا الحضاريس", "doctor": "د. رولا الحضاريس", "specialty": "طب الأسنان", "rating": null, "reviews": null, "phone": "0777741360", "address": "الشارع الرئيسي، مبنى البلدية، الطابق الأول، مكتب 32، الطفيلة"}, {"gov": "الطفيلة", "name": "عيادة الدكتور صدام الصقور", "doctor": "د. صدام الصقور", "specialty": "طب الأسنان", "rating": null, "reviews": null, "phone": "0779208006", "address": "مقابل مجمع السفريات القديم، فوق حلويات خلود حبيبة، الطفيلة"}, {"gov": "الطفيلة", "name": "Best Smile Dental Center", "doctor": "اسم الطبيب غير متاح في المصدر المستخدم", "specialty": "طب الأسنان", "rating": null, "reviews": null, "phone": "0770783292", "address": "مبنى البلدية، مقابل السوق الشعبي، الطفيلة"}];
+const patients=[{"id": "A104", "cat": "restorative", "req": "Class II", "age": "20–30", "area": "العقبة", "concern": "مشكلة في ضرس خلفي مع حساسية للبارد", "days": "الأحد والثلاثاء"}, {"id": "A109", "cat": "restorative", "req": "Class II", "age": "30–40", "area": "العقبة", "concern": "ألم سن مع اشتباه بوجود تسوس", "days": "الإثنين والأربعاء"}, {"id": "A115", "cat": "restorative", "req": "Class I", "age": "18–25", "area": "العقبة", "concern": "مشكلة في الأضراس الخلفية", "days": "الإثنين والخميس"}, {"id": "A128", "cat": "restorative", "req": "Class IV", "age": "20–30", "area": "العقبة", "concern": "كسر في سن أمامي", "days": "الأحد والإثنين"}, {"id": "E203", "cat": "endo", "req": "Endodontic Case", "age": "30–40", "area": "العقبة", "concern": "ألم مستمر في سن خلفي يحتاج تقييمًا", "days": "حسب التنسيق"}, {"id": "P311", "cat": "perio", "req": "Scaling", "age": "20–30", "area": "العقبة", "concern": "نزف لثة وتراكمات تحتاج تقييمًا", "days": "الثلاثاء والخميس"}, {"id": "S402", "cat": "surgery", "req": "Extraction", "age": "30–50", "area": "العقبة", "concern": "سن متهدم يحتاج تقييمًا للخلع", "days": "الأحد والأربعاء"}, {"id": "PR510", "cat": "prostho", "req": "Removable Prosthodontics", "age": "50–65", "area": "العقبة", "concern": "أسنان مفقودة وتحتاج تقييمًا للتعويض", "days": "الإثنين والخميس"}, {"id": "PD601", "cat": "peds", "req": "Pediatric Case", "age": "8–12", "area": "العقبة", "concern": "شكوى أسنان لدى طفل تحتاج فحصًا", "days": "السبت والثلاثاء"}];
+let current='home',cat='restorative',req='Class II';
+
+function go(id){document.querySelectorAll('.page').forEach(x=>x.classList.remove('on'));document.getElementById(id).classList.add('on');current=id;document.getElementById('bottom').classList.toggle('show',id!=='home');window.scrollTo(0,0);if(id==='patient')renderClinics();if(id==='student')renderPatients()}
+function choose(container,el){document.querySelectorAll('#'+container+' .card').forEach(x=>x.classList.remove('sel'));el.classList.add('sel')}
+document.querySelectorAll('#providers .card').forEach(x=>x.onclick=()=>choose('providers',x));
+document.querySelectorAll('#services .card').forEach(x=>x.onclick=()=>choose('services',x));
+document.querySelectorAll('#cats .card').forEach(x=>x.onclick=()=>{choose('cats',x);cat=x.dataset.cat;document.getElementById('resto').style.display=cat==='restorative'?'block':'none';renderPatients()});
+document.querySelectorAll('#reqs .chip').forEach(x=>x.onclick=()=>{document.querySelectorAll('#reqs .chip').forEach(y=>y.classList.remove('sel'));x.classList.add('sel');req=x.dataset.req;renderPatients()});
+
+const gov=document.getElementById('gov');
+const govs=['كل الأردن',...new Set(clinics.map(x=>x.gov))];
+gov.innerHTML=govs.map(x=>`<option>${x}</option>`).join('');
+gov.onchange=renderClinics;document.getElementById('sort').onchange=renderClinics;document.getElementById('q').oninput=renderClinics;
+
+function esc(s){return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
+function maps(c){return 'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(c.name+' '+c.address)}
+function renderClinics(){
+ let a=clinics.slice(),g=gov.value,q=document.getElementById('q').value.trim().toLowerCase(),sort=document.getElementById('sort').value;
+ if(g&&g!=='كل الأردن')a=a.filter(x=>x.gov===g);
+ if(q)a=a.filter(x=>[x.name,x.doctor,x.specialty,x.address,x.gov].join(' ').toLowerCase().includes(q));
+ a.sort((x,y)=>sort==='reviews'?((y.reviews??-1)-(x.reviews??-1)||((y.rating??-1)-(x.rating??-1))):((y.rating??-1)-(x.rating??-1)||((y.reviews??-1)-(x.reviews??-1))));
+ document.getElementById('clinics').innerHTML=a.map(c=>`<article class="clinic"><div class="clinicTop"><div><h3>${esc(c.name)}</h3><div class="info">${esc(c.specialty)}</div></div><div class="stars">${c.rating==null?'غير متاح':'★ '+c.rating.toFixed(1)}<div class="rev">${c.reviews==null?'':c.reviews+' مراجعة'}</div></div></div><div class="info">👨‍⚕️ ${esc(c.doctor)}</div><div class="info">📍 ${esc(c.address)}</div><div class="info">📞 ${esc(c.phone||'غير متاح')}</div><div class="actions"><a class="sm" target="_blank" href="${maps(c)}">عرض الموقع</a>${c.phone?`<a class="sm call" href="tel:${c.phone}">اتصال</a>`:`<span class="sm call disabled">الرقم غير متاح</span>`}</div></article>`).join('')||'<div class="notice">لا توجد نتائج مطابقة.</div>';
+}
+function renderPatients(){
+ let a=patients.filter(x=>x.cat===cat&&(cat!=='restorative'||req==='all'||x.req===req));
+ document.getElementById('patients').innerHTML=a.map(p=>`<article class="patient"><div class="patientHead"><div><h3>${esc(p.req)}</h3><span class="badge">مطابقة محتملة — يتطلب فحصًا سريريًا</span></div><span class="pid">#${p.id}</span></div><div class="meta"><div>👤 ${p.age}</div><div>📍 ${p.area}</div><div>🦷 ${p.concern}</div><div>📅 ${p.days}</div></div><button class="btn primary" onclick="toast('تم إرسال طلب مطابقة تجريبي للحالة #${p.id}')">طلب مطابقة</button></article>`).join('')||'<div class="notice">لا توجد حالات تجريبية مطابقة الآن.</div>';
+}
+function toast(t){const e=document.getElementById('toast');e.textContent=t;e.classList.add('on');clearTimeout(e._t);e._t=setTimeout(()=>e.classList.remove('on'),2400)}
+function jumpSearch(){if(current==='patient')document.getElementById('gov').scrollIntoView({behavior:'smooth',block:'center'});else if(current==='student')document.getElementById('cats').scrollIntoView({behavior:'smooth',block:'start'})}
+function carousel(parentSel,slideSel,dotsId,ms){
+ const slides=[...document.querySelectorAll(parentSel+' '+slideSel)],dots=document.getElementById(dotsId);let i=0;
+ dots.innerHTML=slides.map((_,n)=>`<button class="dot ${n===0?'on':''}" aria-label="slide"></button>`).join('');
+ const ds=[...dots.children];
+ function show(n){slides.forEach((s,k)=>s.classList.toggle('on',k===n));ds.forEach((d,k)=>d.classList.toggle('on',k===n));i=n}
+ ds.forEach((d,n)=>d.onclick=()=>show(n));setInterval(()=>show((i+1)%slides.length),ms);
+}
+carousel('#mainHero','.slide','mainDots',5200);carousel('#studentHero','.stu','studentDots',4800);
+renderClinics();renderPatients();
+</script>
+</body></html>
